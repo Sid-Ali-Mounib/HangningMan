@@ -50,6 +50,7 @@ public class SpreadSheetWord implements PickWord{
             sb.append(linje + "\n");
             linje = br.readLine();
         }
+
         return sb.toString();
     }
 
