@@ -9,6 +9,18 @@
     android:background="@drawable/defeatbillede"
     tools:context=".Defeat">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="208dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="defeat.json"
+        app:lottie_loop="true" />
+
     <Button
         android:id="@+id/prøvIgen"
         android:layout_width="wrap_content"
@@ -24,12 +36,12 @@
         android:id="@+id/mainMenu2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="72dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="Main Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

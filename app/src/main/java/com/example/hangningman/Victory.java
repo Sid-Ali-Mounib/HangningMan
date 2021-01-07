@@ -11,13 +11,14 @@ import android.widget.TextView;
 public class Victory extends AppCompatActivity  implements View.OnClickListener  {
     Button spilIgen ;
     Button mainMenu ;
+    Button gemScore;
     TextView amountOfTries;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_victory);
-
 
         Intent i = getIntent();
         amountOfTries=findViewById(R.id.amountOfTries);
@@ -32,6 +33,8 @@ public class Victory extends AppCompatActivity  implements View.OnClickListener 
 
 
 
+
+
     }
 
     @Override
@@ -42,6 +45,8 @@ public class Victory extends AppCompatActivity  implements View.OnClickListener 
             startSpilIgen();
         }
     }
+
+
     private void gåTilMain() {
         Intent Main = new Intent(this,MainActivity.class);
         startActivity(Main);

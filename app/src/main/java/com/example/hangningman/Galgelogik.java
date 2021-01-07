@@ -31,7 +31,7 @@ public class Galgelogik {
     muligeOrd.add("skovsnegl");
     muligeOrd.add("solsort");
     muligeOrd.add("tyve");
-    startNytSpil();
+
   }
 
 
@@ -130,7 +130,11 @@ public class Galgelogik {
 
 
 
-
+  public void setOrdet(String ordet){
+    this.ordet = ordet;
+    System.out.println("Nyt spil - det skjulte ord er: "+ordet);
+    opdaterSynligtOrd();
+  }
 
   public void hentOrdFraDr() throws Exception {
     pickWord = new DrWord();

@@ -38,7 +38,7 @@ public class DrWord implements PickWord {
 
     }
 
-    public static String hentUrl(String url) throws IOException {
+    private static String hentUrl(String url) throws IOException {
         System.out.println("Henter data fra " + url);
         BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
         StringBuilder sb = new StringBuilder();

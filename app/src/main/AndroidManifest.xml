@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".HighScoreListActivity"></activity>
+        <activity android:name=".SelectMode" />
+        <activity android:name=".ListViewActivity" />
         <activity android:name=".Defeat" />
         <activity android:name=".Victory" />
         <activity android:name=".GameScreen" />

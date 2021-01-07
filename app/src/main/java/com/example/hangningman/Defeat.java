@@ -13,6 +13,7 @@ public class Defeat extends AppCompatActivity implements View.OnClickListener{
     Button mainMenu ;
     TextView theWholeWord;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

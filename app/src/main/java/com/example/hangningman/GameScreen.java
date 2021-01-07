@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.parser.IntegerParser;
+
+import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -24,6 +27,7 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
     ImageView baggrund;
     EditText gætInput;
     Button indsendKnap;
+    String wordFromList;
 
 
     Executor bgThread = Executors.newSingleThreadExecutor(); // en baggrundstråd
@@ -35,11 +39,30 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
-        logik = new Galgelogik();
-        logik.startNytSpil();
-        hentOrdFraThread();
         initialisere();
+        logik = new Galgelogik();
+
+
+        Intent i = getIntent();
+        wordFromList = i.getStringExtra("WordFromList");
+
+        try {
+            if (wordFromList.equals(null)){}else{
+                logik.setOrdet(wordFromList);
+                ord = findViewById(R.id.wordText);
+                ord.setText(logik.getSynligtOrd());
+            }
+
+        }catch (Exception E){
+            hentOrdFraThread();
+        }
+
+
+
+
+
         indsendKnap.setOnClickListener(this);
+
 
     }
     @Override
@@ -101,6 +124,12 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
 
 
     public void vundet(){
+
+        ScoreListData score = new ScoreListData(logik.getOrdet(), Integer.toString(logik.getAntalForkerteBogstaver()));
+
+       PreferenceManagerClass.getInstance().saveData(this, score);
+
+
         Intent victory = new Intent(this, Victory.class);
         victory.putExtra("amountOfTries", Integer.toString(logik.getAntalForkerteBogstaver()));
         startActivity(victory);
